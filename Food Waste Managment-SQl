@@ -1,0 +1,53 @@
+--project: Food waste tracker
+--purpose: this project tracks nd analyzes about the food waste data
+--tools used: SQL
+
+-->: create DATABASE1
+CREATE DATABASE food_waste_tracker;
+
+--> Create Table
+CREATE TABLE students(
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(50),
+    Department VARCHAR(10),
+    Hostel_room VARCHAR(10),
+    );
+--> Inserting sample data into the students table.
+--> each student has a unique ID but multiple students can share the room numbers  
+    INSERT INTO students(student_id,student_name,Department,Hostel_room) VALUES
+    (101,'rahul','CSE','H101'),
+    (102,'Anil','ECE','H102'),
+    (103,'kiran','CSE','H101'),
+    (104,'arjun','MECH','H103'),
+    (105,'kiran','CSE','H101'),
+    (106,'ragu','EEE','H102'),
+    (107,'hari','IT','H103'),
+    (108,'koushik','ECE','H102'),
+    (109,'siva','ECE','H101'),
+    (110,'raja','AIML','H103');
+-->This query helps verify that the data is inserted correctly.
+SELECT*FROM Students;
+
+--> create TABLE2
+CREATE TABLE waste_records(
+    record_id INT PRIMARY KEY,
+    student_id INT,
+    meal_type VARCHAR(20),
+    Waste_quantity DECIMAL(4,2),
+    waste_date DATE
+);
+--> insert sample data.
+INSERT INTO waste_records(record_id, student_id, meal_type, waste_quality, waste_date) VALUES
+(1,101,'Breakfast',0.02,'2026-03-08'),
+(2,102,'Lunch',0.30,'2026-03-08'),
+(3,103,'Dinner',0.15,'2026-03-08'),
+(4,104,'Lunch',0.25,'2026-03-08'),
+(5,105,'Breakfast',0.10,'2026-03-08'),
+(6,106,'Dinner',0.35,'2026-03-08'),
+(7,107,'lunch',0.40,'2026-03-08'),
+(8,108,'Breakfast',0.20,'2026-03-08'),
+(9,109,'Dinner',0.30,'2026-03-08'),
+(10,110,'Lunch',0.25,'2026-03-08');
+-->This query helps verify that the data is inserted correctly.
+SELECT*FROM waste_records;
+
