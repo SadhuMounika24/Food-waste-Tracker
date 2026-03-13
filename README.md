@@ -1,6 +1,6 @@
 # Food waste Tracker
 
-## Discription.
+## Description.
 This project is developed using SQL to manage and track food waste data in a database system.
 
 ## Technologies Used
